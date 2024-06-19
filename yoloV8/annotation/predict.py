@@ -59,8 +59,8 @@ class YoloObjectDetection:
         if self.prediction_results:
             return self.prediction_results[0].names
 
-m = YoloObjectDetection()
-result, img = m.predict("datasets/mumbai-led-light-traffic-signal-2021-600x338.jpg", return_image=True)
-im = Image.fromarray(img)
-im.save("test.jpeg")
-print(result)
+# m = YoloObjectDetection()
+# result, img = m.predict("datasets/mumbai-led-light-traffic-signal-2021-600x338.jpg", return_image=True)
+# im = Image.fromarray(img)
+# im.save("test.jpeg")
+# print(result)
