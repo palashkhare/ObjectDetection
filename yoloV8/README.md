@@ -84,3 +84,4 @@ Indexes of these items are numbers that you used when annotating the images, and
 * https://www.freecodecamp.org/news/how-to-detect-objects-in-images-using-yolov8/
 * https://cocodataset.org/#home
 * https://universe.roboflow.com/roboflow-100/road-signs-6ih4y
+* https://docs.ultralytics.com/modes/export/#usage-examples
