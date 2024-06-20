@@ -85,3 +85,8 @@ Indexes of these items are numbers that you used when annotating the images, and
 * https://cocodataset.org/#home
 * https://universe.roboflow.com/roboflow-100/road-signs-6ih4y
 * https://docs.ultralytics.com/modes/export/#usage-examples
+* **CUDA Support** https://stackoverflow.com/questions/60987997/why-torch-cuda-is-available-returns-false-even-after-installing-pytorch-with
+* https://en.wikipedia.org/wiki/CUDA
+* https://askubuntu.com/questions/670485/how-to-inspect-the-currently-used-nvidia-driver-version-and-switch-it-to-another
+  * nvidia-smi
+  * nvidia-settings
