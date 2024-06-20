@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "kafka-server"
+version = "0.1.0"
+description = "Kafka operations on python"
+authors = ["palashkhare009 <palashkhare009@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+confluent-kafka = "^2.4.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

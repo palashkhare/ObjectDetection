@@ -168,3 +168,5 @@ cython_debug/
 *.pt
 */runs/*
 poetry.lock
+*.mp4
+*.avi
