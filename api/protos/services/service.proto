@@ -1,0 +1,84 @@
+syntax = "proto3";
+
+package service.v1;
+
+import "google/protobuf/Empty.proto";
+
+
+service ObjectDetection {
+    rpc getVersion(google.protobuf.Empty) returns (Version);
+    rpc createStream(StreamRequest) returns (StreamResponse);
+    rpc sendFrame(Frame) returns (FrameResponse);
+    //TODO: rpc sendVideo(google.protobuf.Empty) returns (google.protobuf.Empty);
+    rpc getNextFrame(google.protobuf.Empty) returns (Frame);
+    //TODO: rpc getNextVideo(google.protobuf.Empty) returns (google.protobuf.Empty);
+    rpc upstreamFrame(stream Frame) returns (google.protobuf.Empty);
+    rpc downstreamFrame(DownstreamFrame) returns (stream Frame);
+    rpc streamFrame(stream Frame) returns (stream Frame);
+}
+
+message Version {
+    string version = 1;
+}
+enum Status {
+    SUCCESS = 1;
+    FAILED = 2;
+    BAD_REQUEST = 3;
+}
+
+enum ImageFormat {
+    JPEG = 1;
+    JPG = 2;
+    PNG = 3;
+    AVI = 4;
+    MP4 = 5;
+}
+enum VideoFormat {
+    AVI = 4;
+    MP4 = 5;
+}
+enum TransferMode {
+    SINGLE = 1;
+    STREAM = 2;
+}
+
+message StreamRequest {
+    oneof format{
+        ImageFormat img_format = 1;
+        VideoFormat vid_format = 2;
+    }
+    string use_model = 3;
+    repeated int32 resolution = 4;
+    TransferMode transfer_mode = 5;
+}
+message StreamResponse {
+    string stream_id = 1;
+    TransferMode response = 2;
+}
+
+message AnnotatedObject{
+    string object_name = 1;
+    int32 object_id = 2;
+    repeated float bounding_box = 3;
+}
+message Annotation {
+    int32 count_detected = 1;
+    repeated AnnotatedObject =2;
+}
+
+message Frame{
+    string id = 1; // ID to reference output
+    string stream_id = 2; // Stream on which this frame need to be placed
+    repeated int32 resolution = 2;
+    repeated int32 array = 3;
+    repeated int32 array_dim = 4;
+    ImageFormat format = 5;
+    Annotation annotation = 6; // For response frame
+}
+message FrameResponse{
+    Status status = 1;
+    string id = 2; // ID which client sent
+}
+message DownstreamFrame{
+    string stream_id = 1;
+}

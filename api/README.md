@@ -12,3 +12,8 @@
 * Send Camera Frame <-> Received Frame response (Response from stream and application)
 * Request Annotated data (Data/frame/Both) <-> Annotated data response
 * Status request <-> status response
+
+## References
+* https://protobuf.dev/programming-guides/proto3/#scalar
+* https://alirezafarokhi.medium.com/what-is-grpc-and-different-types-of-grpc-services-9b86a7267064
+* 
