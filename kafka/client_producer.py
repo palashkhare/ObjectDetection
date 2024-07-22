@@ -2,6 +2,7 @@ from dataclasses import dataclass
 from datetime import datetime
 import io
 import sys
+import time
 from confluent_kafka import Producer, KafkaError
 from avro.io import DatumWriter, BinaryEncoder
 from avro import schema

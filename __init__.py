@@ -7,6 +7,6 @@ from kafka.worker_consumer import consume, start_parallel_consume
 
 model = YoloObjectDetection()
 
-start_parallel_consume(model=model, processes=5)
+start_parallel_consume(model=model, processes=3)
 
 ## Left here
